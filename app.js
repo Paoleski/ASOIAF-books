@@ -12,13 +12,17 @@ const buttons = document.querySelectorAll('button');
 
 
 const populateList = (books, filter) => {
+    
     if (filter === 'mainseries') {
         books = books.filter(book => book.name.startsWith('A'));
+        books = books.map(book => ({...book, id:(books.indexOf(book) + 1)}));
+        console.log(books);
     } else if (filter === 'dunkandegg') {
-        console.log('dunk and egg');
         books = books.filter(book => book.numberOfPages < 600)
+        books = books.map(book => ({...book, id:(books.indexOf(book) + 1)}));
     } else {
         books = books.slice(8);
+        books = books.map(book => ({...book, id:(books.indexOf(book) + 1)}));
     }
     console.log(books);
     bookWrapper.innerHTML = books.map(book => {
@@ -27,6 +31,7 @@ const populateList = (books, filter) => {
         return `
                 <div class="book">
                     <div class="book-preview" id="book-1">
+                        <h4 style="text-align:center;margin:0;">Book ${book.id}</h4>
                         <h2 class="book-title" >${book.name}</h6>
                         <h4 style="text-align:center;margin:0;">${author}</h4>
                         <hr>
@@ -36,6 +41,7 @@ const populateList = (books, filter) => {
                             <p>Number of pov characters: ${book.povCharacters.length}</p>
                             <p>Number of characters: ${book.characters.length}</p>
                             <p>Publisher: ${book.publisher}</p>
+
                         </div>
                     </div>
                 </div>

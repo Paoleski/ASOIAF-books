@@ -1,139 +1,170 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 :root {
-    --border-size: 0.125rem;
-    --duration: 250ms;
-    --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
-    --font-family: monospace;
-    --color-primary: white;
-    --color-secondary: black;
-    --color-tertiary: dodgerblue;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --space: 1rem;
+  --border-size: 0.125rem;
+  --duration: 250ms;
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --font-family: monospace;
+  --color-primary: white;
+  --color-secondary: black;
+  --color-tertiary: dodgerblue;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --space: 1rem;
 }
 
 
 html, body {
-    margin:0;
-    padding:0;
+  margin:0;
+  padding:0;
 }
 
 h1, h2, h3, h4, h5, h6, strong {
-    font-family: 'Overpass', sans-serif;
+  font-family: 'Overpass', sans-serif;
 }
 
 p, li, span, label, input, textarea {
-    font-family: 'Overpass', sans-serif;
-    font-size:18px;
+  font-family: 'Overpass', sans-serif;
+  font-size:18px;
 }
 
 .s1 {
-    background-color: #eaeaea;
-    border-bottom:1px gray;
-    overflow: auto;
-    background:url('./images/westerosmap.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: #eaeaea;
+  border-bottom:1px gray;
+  overflow: auto;
+  background:url('./images/westerosmap.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main-container {
-    width:1200px;
-    margin:100px auto;
-    display:flex;
-    flex-direction: column;
-    min-height:100vh;
-    
+  width:1200px;
+  margin:100px auto;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height:100vh;
+  
 }
 
 .books-wrapper {
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    justify-content: center;
-    padding-bottom:30px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-wrap:wrap;
+      flex-wrap:wrap;
+  gap:20px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom:30px;
 }
 
 .book-title {
-    margin:0;
-    font-size:28px;
-    text-align: center;
+  margin:0;
+  font-size:28px;
+  text-align: center;
 }
 
 .book {
-    border:1px solid black;
-    background-color: #fff;
-    min-width:250px;
-    padding:20px;
-    -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
-    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+  border:1px solid black;
+  background-color: #fff;
+  min-width:250px;
+  padding:20px;
+  -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+  box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 
 }
 
 .book-info {
-    line-height: 1em;
-    margin-top:30px;
+  line-height: 1em;
+  margin-top:30px;
 }
 
 .multi-button {
-    display: flex;
-    width: 100%;
-    box-shadow: var(--shadow) 4px 4px;
-    margin-top:20px;
-    margin-bottom:20px;
-  }
-  
-  .multi-button button {
-    flex-grow: 1;
-    cursor: pointer;
-    position: relative;
-    padding:
-      calc(var(--space) / 1.125)
-      var(--space)
-      var(--space);
-    border: var(--border-size) solid black;
-    color: var(--color-secondary);
-    background-color: var(--color-primary);
-    font-size: 1.5rem;
-    font-family: var(--font-family);
-    text-transform: lowercase;
-    text-shadow: var(--shadow) 2px 2px;
-    transition: flex-grow var(--duration) var(--ease);
-  }
-  
-  .multi-button button + button {
-    border-left: var(--border-size) solid black;
-    margin-left: calc(var(--border-size) * -1);
-  }
-  
-  .multi-button button:hover,
-  .multi-button button:focus {
-    flex-grow: 2;
-    color: white;
-    outline: none;
-    text-shadow: none;
-    background-color: var(--color-secondary);
-  }
-  
-  .multi-button button:focus {
-    outline: var(--border-size) dashed var(--color-primary);
-    outline-offset: calc(var(--border-size) * -3);
-  }
-  
-  .multi-button:hover button:focus:not(:hover) {
-    flex-grow: 1;
-    color: var(--color-secondary);
-    background-color: var(--color-primary);
-    outline-color: var(--color-tertiary);
-  }
-  
-  .multi-button button:active {
-    transform: translateY(var(--border-size));
-  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-shadow: var(--shadow) 4px 4px;
+          box-shadow: var(--shadow) 4px 4px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.multi-button button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  padding:
+    calc(var(--space) / 1.125)
+    var(--space)
+    var(--space);
+  border: var(--border-size) solid black;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  font-family: var(--font-family);
+  text-transform: lowercase;
+  text-shadow: var(--shadow) 2px 2px;
+  -webkit-transition: flex-grow var(--duration) var(--ease), -webkit-box-flex var(--duration) var(--ease);
+  transition: flex-grow var(--duration) var(--ease), -webkit-box-flex var(--duration) var(--ease);
+  -o-transition: flex-grow var(--duration) var(--ease);
+  transition: flex-grow var(--duration) var(--ease);
+  transition: flex-grow var(--duration) var(--ease), -webkit-box-flex var(--duration) var(--ease), -ms-flex-positive var(--duration) var(--ease);
+}
+
+.multi-button button + button {
+  border-left: var(--border-size) solid black;
+  margin-left: calc(var(--border-size) * -1);
+}
+
+.multi-button button:hover,
+.multi-button button:focus {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  color: white;
+  outline: none;
+  text-shadow: none;
+  background-color: var(--color-secondary);
+}
+
+.multi-button button:focus {
+  outline: var(--border-size) dashed var(--color-primary);
+  outline-offset: calc(var(--border-size) * -3);
+}
+
+.multi-button:hover button:focus:not(:hover) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  outline-color: var(--color-tertiary);
+}
+
+.multi-button button:active {
+  -webkit-transform: translateY(var(--border-size));
+      -ms-transform: translateY(var(--border-size));
+          transform: translateY(var(--border-size));
+}
 
 
 @media screen and (max-width: 1200px) {
-    .main-container{
-        width:85%;
-        margin:0 auto;
-        padding-bottom: 50px;
-    }
+  .main-container{
+      width:85%;
+      margin:0 auto;
+      padding-bottom: 50px;
+  }
 }
